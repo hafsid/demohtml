@@ -1,0 +1,27 @@
+body{
+    background-color: yellow;
+}
+
+
+ul#menu{
+    padding: 0;
+}
+ul#menu li{
+    display: inline;
+}
+ul#menu li a{
+    background-color: black;
+    color: white;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+ul#menu li a:hover{
+    background-color: orange;
+}
+
+div,a,p,span{
+    color:blue
+}
+
+

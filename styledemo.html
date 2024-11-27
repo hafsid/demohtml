@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Styles</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script>
+        function fnClear(){
+            var txtEmail=document.getElementById("txtEmail");
+            if(txtEmail.value=="Enter your Email"){
+                txtEmail.value="";
+                txtEmail.style.backgroundColor="red";
+            }
+            
+        }
+
+        function fnValidate(){
+            var txtEmail = document.getElementById("txtEmail");
+            if(txtEmail.value == ""){
+                alert("email cannot be empty");
+                txtEmail.value = "Enter your Email";
+                txtEmail.style.backgroundColor="red";
+            }
+            
+        }
+
+        function fnchangecolor(){
+            var txtEmail=document.getElementById("txtEmail");
+            txtEmail.style.backgroundColor="white";
+        }
+
+        function fnDrop(){
+            var dropDown=document.getElementById("dropDown");
+            alert(dropDown.selectedIndex);
+            alert(dropDown.value);
+            alert(dropDown.options[dropDown.selectedIndex].text)
+        }
+        function fnisValid(){
+            txtEmail= document.getElementById("txtEmail");
+            var dropDown = document.getElementById("dropDown");
+            var reg = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+
+            if(reg.test(txtEmail.value)==false){
+                alert("invalid email");
+                return false;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+ <form onsubmit="return fnisValid()">
+    <input type="text" id="txtEmail" value="Enter your Email"
+        onfocus="fnClear()" onblur="fnValidate()" onchange="fnchangecolor()"
+    ></input>
+    <br/>
+    <select id="dropDown" onchange="fnDrop()">
+        <option value="0">Select Depeartment</option>
+        <option value="101">English</option>
+        <option value="102">Hindi</option>
+        <option value="103">Kanada</option>
+
+
+    </select>
+    <br/>
+    <br/>
+    <input type="submit" name="name" value="submit"/>
+</form>
+</body>
+
+</html>
